@@ -1,0 +1,403 @@
+@import "tailwindcss";
+
+/* Notebook Theme Variables */
+:root {
+  --background: rgb(249, 249, 249);
+  --foreground: rgb(58, 58, 58);
+  --card: rgb(255, 255, 255);
+  --card-foreground: rgb(58, 58, 58);
+  --popover: rgb(255, 255, 255);
+  --popover-foreground: rgb(58, 58, 58);
+  --primary: rgb(96, 96, 96);
+  --primary-foreground: rgb(240, 240, 240);
+  --secondary: rgb(222, 222, 222);
+  --secondary-foreground: rgb(58, 58, 58);
+  --muted: rgb(227, 227, 227);
+  --muted-foreground: rgb(80, 80, 80);
+  --accent: rgb(243, 234, 200);
+  --accent-foreground: rgb(93, 64, 55);
+  --destructive: rgb(200, 122, 122);
+  --destructive-foreground: rgb(255, 255, 255);
+  --border: rgb(116, 114, 114);
+  --input: rgb(255, 255, 255);
+  --ring: rgb(160, 160, 160);
+  --chart-1: rgb(51, 51, 51);
+  --chart-2: rgb(85, 85, 85);
+  --chart-3: rgb(119, 119, 119);
+  --chart-4: rgb(153, 153, 153);
+  --chart-5: rgb(187, 187, 187);
+  --sidebar: rgb(240, 240, 240);
+  --sidebar-foreground: rgb(58, 58, 58);
+  --sidebar-primary: rgb(96, 96, 96);
+  --sidebar-primary-foreground: rgb(240, 240, 240);
+  --sidebar-accent: rgb(243, 234, 200);
+  --sidebar-accent-foreground: rgb(93, 64, 55);
+  --sidebar-border: rgb(192, 192, 192);
+  --sidebar-ring: rgb(160, 160, 160);
+  --font-sans: 'Architects Daughter', sans-serif;
+  --font-serif: "Times New Roman", Times, serif;
+  --font-mono: "Courier New", Courier, monospace;
+  --radius: 0.625rem;
+  --shadow-x: 1px;
+  --shadow-y: 4px;
+  --shadow-blur: 5px;
+  --shadow-spread: 0px;
+  --shadow-opacity: 0.03;
+  --shadow-color: #000000;
+  --shadow-2xs: 1px 4px 5px 0px hsl(0 0% 0% / 0.01);
+  --shadow-xs: 1px 4px 5px 0px hsl(0 0% 0% / 0.01);
+  --shadow-sm: 1px 4px 5px 0px hsl(0 0% 0% / 0.03), 1px 1px 2px -1px hsl(0 0% 0% / 0.03);
+  --shadow: 1px 4px 5px 0px hsl(0 0% 0% / 0.03), 1px 1px 2px -1px hsl(0 0% 0% / 0.03);
+  --shadow-md: 1px 4px 5px 0px hsl(0 0% 0% / 0.03), 1px 2px 4px -1px hsl(0 0% 0% / 0.03);
+  --shadow-lg: 1px 4px 5px 0px hsl(0 0% 0% / 0.03), 1px 4px 6px -1px hsl(0 0% 0% / 0.03);
+  --shadow-xl: 1px 4px 5px 0px hsl(0 0% 0% / 0.03), 1px 8px 10px -1px hsl(0 0% 0% / 0.03);
+  --shadow-2xl: 1px 4px 5px 0px hsl(0 0% 0% / 0.07);
+  --tracking-normal: 0.5px;
+  --spacing: 0.25rem;
+}
+
+.dark {
+  --background: rgb(43, 43, 43);
+  --foreground: rgb(220, 220, 220);
+  --card: rgb(51, 51, 51);
+  --card-foreground: rgb(220, 220, 220);
+  --popover: rgb(51, 51, 51);
+  --popover-foreground: rgb(220, 220, 220);
+  --primary: rgb(176, 176, 176);
+  --primary-foreground: rgb(43, 43, 43);
+  --secondary: rgb(90, 90, 90);
+  --secondary-foreground: rgb(192, 192, 192);
+  --muted: rgb(69, 69, 69);
+  --muted-foreground: rgb(160, 160, 160);
+  --accent: rgb(224, 224, 224);
+  --accent-foreground: rgb(51, 51, 51);
+  --destructive: rgb(217, 175, 175);
+  --destructive-foreground: rgb(43, 43, 43);
+  --border: rgb(79, 79, 79);
+  --input: rgb(51, 51, 51);
+  --ring: rgb(192, 192, 192);
+  --chart-1: rgb(239, 239, 239);
+  --chart-2: rgb(208, 208, 208);
+  --chart-3: rgb(176, 176, 176);
+  --chart-4: rgb(144, 144, 144);
+  --chart-5: rgb(112, 112, 112);
+  --sidebar: rgb(33, 33, 33);
+  --sidebar-foreground: rgb(220, 220, 220);
+  --sidebar-primary: rgb(176, 176, 176);
+  --sidebar-primary-foreground: rgb(33, 33, 33);
+  --sidebar-accent: rgb(224, 224, 224);
+  --sidebar-accent-foreground: rgb(51, 51, 51);
+  --sidebar-border: rgb(79, 79, 79);
+  --sidebar-ring: rgb(192, 192, 192);
+  --font-sans: 'Architects Daughter', sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: "Fira Code", "Courier New", monospace;
+  --radius: 0.625rem;
+  --shadow-x: 1px;
+  --shadow-y: 4px;
+  --shadow-blur: 5px;
+  --shadow-spread: 0px;
+  --shadow-opacity: 0.03;
+  --shadow-color: #000000;
+  --shadow-2xs: 1px 4px 5px 0px hsl(0 0% 0% / 0.01);
+  --shadow-xs: 1px 4px 5px 0px hsl(0 0% 0% / 0.01);
+  --shadow-sm: 1px 4px 5px 0px hsl(0 0% 0% / 0.03), 1px 1px 2px -1px hsl(0 0% 0% / 0.03);
+  --shadow: 1px 4px 5px 0px hsl(0 0% 0% / 0.03), 1px 1px 2px -1px hsl(0 0% 0% / 0.03);
+  --shadow-md: 1px 4px 5px 0px hsl(0 0% 0% / 0.03), 1px 2px 4px -1px hsl(0 0% 0% / 0.03);
+  --shadow-lg: 1px 4px 5px 0px hsl(0 0% 0% / 0.03), 1px 4px 6px -1px hsl(0 0% 0% / 0.03);
+  --shadow-xl: 1px 4px 5px 0px hsl(0 0% 0% / 0.03), 1px 8px 10px -1px hsl(0 0% 0% / 0.03);
+  --shadow-2xl: 1px 4px 5px 0px hsl(0 0% 0% / 0.07);
+}
+
+/* Theme Color Mapping */
+:root {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --font-serif: var(--font-serif);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --shadow-2xs: var(--shadow-2xs);
+  --shadow-xs: var(--shadow-xs);
+  --shadow-sm: var(--shadow-sm);
+  --shadow: var(--shadow);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-xl: var(--shadow-xl);
+  --shadow-2xl: var(--shadow-2xl);
+
+  --tracking-tighter: calc(var(--tracking-normal) - 0.05em);
+  --tracking-tight: calc(var(--tracking-normal) - 0.025em);
+  --tracking-normal: var(--tracking-normal);
+  --tracking-wide: calc(var(--tracking-normal) + 0.025em);
+  --tracking-wider: calc(var(--tracking-normal) + 0.05em);
+  --tracking-widest: calc(var(--tracking-normal) + 0.1em);
+}
+
+/* Apply Notebook Theme */
+body {
+  font-family: var(--font-sans);
+  letter-spacing: var(--tracking-normal);
+  background-color: var(--background);
+  color: var(--foreground);
+  scroll-behavior: smooth;
+}
+
+/* Default to dark theme */
+html {
+  color-scheme: dark;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+/* Theme-aware mode switching */
+.dark body {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+/* Optimize images for better quality */
+img {
+  image-rendering: auto;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* Cloudinary images */
+img[src*="cloudinary.com"] {
+  image-rendering: auto;
+}
+
+/* Custom scrollbar with theme variables */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--muted);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: var(--radius);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Custom range slider with theme */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-track {
+  background: var(--muted);
+  height: 8px;
+  border-radius: var(--radius);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: var(--primary);
+  border: 2px solid var(--background);
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: var(--primary);
+  border: 2px solid var(--background);
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  border: none;
+}
+
+/* Line clamp utility */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Glass morphism effect with theme */
+.glass {
+  background: var(--card);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Focus states with theme */
+select:focus,
+input:focus,
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--ring);
+  border-color: var(--primary);
+}
+
+/* Dark mode specific adjustments */
+.dark select option {
+  background-color: var(--card);
+  color: var(--foreground);
+}
+
+/* Theme-aware animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Import Google Fonts for Architects Daughter */
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+
+/* Smooth transitions for theme changes */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Glass effect utility */
+.glass {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--muted);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-foreground);
+}
+
+/* Theme toggle animation */
+@keyframes themeToggle {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.1); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+.theme-toggle-active {
+  animation: themeToggle 0.6s ease-in-out;
+}
+
+/* Enhanced slider styling */
+.slider-enhanced::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background: var(--primary);
+  border: 3px solid var(--background);
+  box-shadow: var(--shadow-lg);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.slider-enhanced::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: var(--shadow-xl);
+}
+
+.slider-enhanced::-moz-range-thumb {
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background: var(--primary);
+  border: 3px solid var(--background);
+  box-shadow: var(--shadow-lg);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.slider-enhanced::-moz-range-thumb:hover {
+  transform: scale(1.2);
+}
+
+/* Floating animation enhancement */
+@keyframes floatEnhanced {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(-8px) rotate(1deg); }
+  50% { transform: translateY(-15px) rotate(0deg); }
+  75% { transform: translateY(-8px) rotate(-1deg); }
+}
+
+.animate-float-enhanced {
+  animation: floatEnhanced 4s ease-in-out infinite;
+}
+
+/* Pulse glow effect */
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 5px var(--accent); }
+  50% { box-shadow: 0 0 20px var(--accent), 0 0 30px var(--accent); }
+}
+
+.pulse-glow {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
