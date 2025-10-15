@@ -142,13 +142,7 @@ http://localhost:5173
 4. **Smart Results** - Filtered and ranked similar products
 5. **Interactive Filters** - Refine results by preferences
 
-## 🎨 UI Themes
-
-### Light Theme (Notebook Style)
-- Warm paper-like background
-- Architects Daughter font
-- Soft shadows and borders
-- Professional look
+## 🎨 UI Theme
 
 ### Dark Theme (Modern)
 - Deep dark backgrounds
