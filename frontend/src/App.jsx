@@ -38,8 +38,8 @@ export default function App() {
       }
       formData.append("filters", JSON.stringify(filters));
 
-      const backendURL =
-        import.meta.env.VITE_BACKEND_URL + "/api/products/search";
+      const backendURL = `${import.meta.env.VITE_BACKEND_URL.replace(/\/$/, "")}/api/products/search`;
+
 
       const res = await axios.post(backendURL, formData, {
         headers: { "Content-Type": "multipart/form-data" },
